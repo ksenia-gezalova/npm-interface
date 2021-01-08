@@ -1,28 +1,57 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-main>
+      <main-container />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainContainer from "@/components/MainContainer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MainContainer,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: #424242;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html,
+body {
+  overflow: hidden;
+
+  min-width: 320px;
+
+  @media (min-width: 320px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 760px) {
+    font-size: 15px;
+  }
 }
 </style>
